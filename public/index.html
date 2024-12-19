@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat App</title>
+    <script src="https://cdn.socket.io/4.6.0/socket.io.min.js"></script>
+    <script src="scripts.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Socket.IO Chat App</h1>
+
+    <!-- Registration Form -->
+    <form id="register-form">
+        <label for="username">Enter Your Name:</label>
+        <input type="text" id="username" name="username" required>
+        <button type="submit">Register</button>
+    </form>
+    <p id="user-token"></p>
+
+    <!-- Chat Box -->
+    <button class="open-button" onclick="openForm()">Chat</button>
+
+    <div class="chat-popup" id="myForm">
+        <!-- Chat Conversation -->
+        <div id="chat-history">
+            <h2>Conversation History</h2>
+            <ul id="messages"></ul>
+        </div>
+        <form id="chat-form" class="form-container">
+            <h1>Chat</h1>
+
+            <label for="recipient"><b>Recipient</b></label>
+            <input type="text" id="recipient" placeholder="Enter recipient username" required>
+
+            <label for="msg"><b>Message</b></label>
+            <textarea id="message" placeholder="Type message..." name="msg" required></textarea>
+
+            <button type="submit" class="btn">Send</button>
+            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+        </form>
+
+   
+    </div>
+
+</body>
+</html>
